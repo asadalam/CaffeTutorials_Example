@@ -1,2 +1,4 @@
 # CaffeTutorials_Example
 Some caffe tutorials that I am following to increase my hands on working of it. Mostly are just copy-pasted from other sources, but soon enough I'll contribute something original
+
+1) classification_caffe_tutorial.ipynb: A jupyter notebook sourced from Caffe's own tutorial with some changes to reflect python3.8.1. An additional change is to read the images using cv2.imread rather than caffe.io.load_image as the later was throwing some error about io.py in /usr/python/caffe. The image read through open-cv is in BGR format and is not normalized between [0,1]. It needed conversion to RGB and the image preproccesor did not require any transformation from [0,1] to [0,255] as needed by the CaffeNet model by Krizhevsky et al. for ImageNet. It also has some additional prints to help me understand the shape of various numpy.ndarrays
